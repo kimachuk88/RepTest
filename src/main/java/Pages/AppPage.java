@@ -28,13 +28,8 @@ public class AppPage {
         return Search.XPath("//android.widget.TextView[contains(text(),‘Alarm’)]");
     }
 
-    public WebElement getAlertsDialogs() {
+    public WebElement getAlertDialogs() {
         return Search.XPath("//android.widget.TextView[contains(text(),‘Alert Dialogs’)]");
-    }
-
-    public AlertDialogsPage clickAlertDialogs() {
-        getAlertsDialogs().click();
-        return new AlertDialogsPage();
     }
 
     public WebElement getDeviceAdmin() {
@@ -81,4 +76,10 @@ public class AppPage {
         return Search.XPath("//android.widget.TextView[contains(text(),‘Voice Recognition’)]");
     }
 
+    //Actions
+
+    public AlertDialogsPage clickAlertDialogs() {
+        getAlertDialogs().click();
+        return new AlertDialogsPage();
+    }
 }
