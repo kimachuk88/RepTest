@@ -1,9 +1,15 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
-public class PreferencePage {
+public class PreferencePage extends TestRunner {
+    public PreferencePage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
 
     ISearch Search;
 

@@ -1,8 +1,9 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
 
-public class CommandFourPage extends CommonElementsPage{
+public class CommandFourPage extends TestRunner {
     private ISearch Search;
 
     public ISearch getSearch() {

@@ -1,9 +1,16 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
-public class ProgressBarDialogPage {
+public class ProgressBarDialogPage extends TestRunner {
+
+    public ProgressBarDialogPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
     private ISearch Search;
 
     public ISearch getSearch() {
@@ -20,7 +27,7 @@ public class ProgressBarDialogPage {
 
     public AlertDialogsPage clickHide() throws Exception {
         getHide().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public WebElement getCancel() throws Exception {
@@ -29,7 +36,7 @@ public class ProgressBarDialogPage {
 
     public AlertDialogsPage clickCancel() throws Exception {
         getCancel().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public String getHeaderText() throws Exception {

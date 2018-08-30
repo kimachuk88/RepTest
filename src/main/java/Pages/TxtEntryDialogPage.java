@@ -1,9 +1,17 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
-public class TxtEntryDialogPage {
+public class TxtEntryDialogPage extends TestRunner {
+
+    public TxtEntryDialogPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+
     private ISearch Search;
 
     public ISearch getSearch() {
@@ -20,7 +28,7 @@ public class TxtEntryDialogPage {
 
     public AlertDialogsPage clickOk() throws Exception {
         getOk().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public WebElement getCancel() throws Exception {
@@ -29,7 +37,7 @@ public class TxtEntryDialogPage {
 
     public AlertDialogsPage clickCancel() throws Exception {
         getCancel().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public String getHeaderText() throws Exception {

@@ -1,9 +1,17 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class DialogWMessagePage extends CommonElementsPage {
+public class DialogWMessagePage extends TestRunner {
+
+    public DialogWMessagePage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
     private ISearch Search;
 
     public ISearch getSearch() {
@@ -14,25 +22,25 @@ public class DialogWMessagePage extends CommonElementsPage {
         Search = search;
     }
 
-    public WebElement getOk() throws Exception {
-        return Search.Id("android:id/button1");
-    }
+    @FindBy(id ="android:id/button1")
+    private WebElement getOk;
 
     public AlertDialogsPage clickOk() throws Exception {
-        getOk().click();
-        return new AlertDialogsPage();
+        getOk.click();
+        return new AlertDialogsPage(driver);
     }
-
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
-    }
+    @FindBy(id = "android:id/button2")
+    private WebElement getCancel;
 
     public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
-        return new AlertDialogsPage();
+        getCancel.click();
+        return new AlertDialogsPage(driver);
     }
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectMessageText;
 
     public String getMessageText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
+        return selectMessageText.getText();
+
     }
 }

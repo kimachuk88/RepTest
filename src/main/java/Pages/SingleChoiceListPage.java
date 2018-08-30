@@ -1,9 +1,16 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
-public class SingleChoiceListPage {
+public class SingleChoiceListPage extends TestRunner {
+
+    public SingleChoiceListPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
     private ISearch Search;
 
     public ISearch getSearch() {
@@ -20,7 +27,7 @@ public class SingleChoiceListPage {
 
     public AlertDialogsPage clickOk() throws Exception {
         getOk().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public WebElement getCancel() throws Exception {
@@ -29,7 +36,7 @@ public class SingleChoiceListPage {
 
     public AlertDialogsPage clickCancel() throws Exception {
         getCancel().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public String getHeaderText() throws Exception {
@@ -42,7 +49,7 @@ public class SingleChoiceListPage {
 
     public SingleChoiceListPage chooseMap() throws Exception {
         getMap().click();
-        return new SingleChoiceListPage();
+        return new SingleChoiceListPage(driver);
     }
 
     public WebElement getSatellite() throws Exception {
@@ -51,7 +58,7 @@ public class SingleChoiceListPage {
 
     public SingleChoiceListPage chooseSatellite() throws Exception {
         getSatellite().click();
-        return new SingleChoiceListPage();
+        return new SingleChoiceListPage(driver);
     }
 
     public WebElement getTraffic() throws Exception {
@@ -60,7 +67,7 @@ public class SingleChoiceListPage {
 
     public SingleChoiceListPage chooseTraffic() throws Exception {
         getTraffic().click();
-        return new SingleChoiceListPage();
+        return new SingleChoiceListPage(driver);
     }
 
     public WebElement getStreetView() throws Exception {
@@ -69,6 +76,6 @@ public class SingleChoiceListPage {
 
     public SingleChoiceListPage chooseStreetView() throws Exception {
         getStreetView().click();
-        return new SingleChoiceListPage();
+        return new SingleChoiceListPage(driver);
     }
 }

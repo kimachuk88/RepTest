@@ -1,9 +1,16 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class OSPage {
+public class OSPage extends TestRunner {
+    public OSPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
 
     public ISearch Search;
 
@@ -26,9 +33,8 @@ public class OSPage {
     public WebElement getRotationVector() {
         return Search.XPath("//android.widget.TextView[contains(text(),‘Rotation Vector’)]");
     }
-    public WebElement getSMSMessaging() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘SMS Messaging’)]");
-    }
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
+    private WebElement getSMSMessaging;
 
     public WebElement getTriggerSensors() {
         return Search.XPath("//android.widget.TextView[contains(text(),‘TriggerSensors’)]");
@@ -36,7 +42,7 @@ public class OSPage {
 
     //Actions
     public SMSMessagingPage clickSMSMessaging(){
-        getSMSMessaging().click();
+        getSMSMessaging.click();
         return new SMSMessagingPage();
     }
 

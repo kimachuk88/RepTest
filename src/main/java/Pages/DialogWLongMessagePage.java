@@ -1,9 +1,16 @@
 package Pages;
 
 import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
-public class DialogWLongMessagePage extends CommonElementsPage {
+public class DialogWLongMessagePage extends TestRunner {
+
+    public DialogWLongMessagePage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
     private ISearch Search;
 
     public ISearch getSearch() {
@@ -20,7 +27,7 @@ public class DialogWLongMessagePage extends CommonElementsPage {
 
     public AlertDialogsPage clickOk() throws Exception {
         getOk().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public WebElement getCancel() throws Exception {
@@ -29,7 +36,7 @@ public class DialogWLongMessagePage extends CommonElementsPage {
 
     public AlertDialogsPage clickCancel() throws Exception {
         getCancel().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public WebElement getSomething() throws Exception {
@@ -38,7 +45,7 @@ public class DialogWLongMessagePage extends CommonElementsPage {
 
     public AlertDialogsPage clickSomething() throws Exception {
         getSomething().click();
-        return new AlertDialogsPage();
+        return new AlertDialogsPage(driver);
     }
 
     public String getMessageText() throws Exception {

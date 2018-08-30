@@ -1,61 +1,44 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class MainMenuPage {
-    AndroidDriver driver;
+public class MainMenuPage extends TestRunner {
 
-    ISearch Search;
 
-    public ISearch getSearch() {
-        return Search;
-    }
-
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
-
-    public WebElement getApp() {
-        return Search.XPath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[3]");
-    }
-
-    public WebElement getOS() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘OS’)]");
-    }
-
-    public WebElement getPreference() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Preference’)]");
-    }
     public MainMenuPage(AndroidDriver driver) {
-        //this.driver = driver;
-
         PageFactory.initElements(driver, this);
     }
 
+    @FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[3]")
+    private WebElement getApp;
+
+    @FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[9]")
+    private WebElement getOS;
+
+    @FindBy(how = How.XPATH, using = "//android.widget.TextView[contains(text(),‘Preference’)]")
+    private WebElement getPreference;
 
     //Actions
 
-    public AppPage clickApp(){
-        getApp().click();
-        return new AppPage();
+    public AppPage clickApp() {
+        getApp.click();
+        return new AppPage(driver);
     }
 
-    public OSPage clickOS(){
-        getOS().click();
-        return new OSPage();
+    public OSPage clickOS() {
+        getOS.click();
+        return new OSPage(driver);
     }
 
-    public PreferencePage clickPreferenc(){
-        getPreference().click();
-        return new PreferencePage();
+    public PreferencePage clickPreference() {
+        getPreference.click();
+        return new PreferencePage(driver);
     }
-
-
-
-
 
 
 }
