@@ -1,5 +1,6 @@
 package Pages;
 
+import Pages.MessageToSendProtocol.SMS;
 import Tools.ISearch;
 import org.openqa.selenium.WebElement;
 
@@ -35,11 +36,9 @@ public class OSPage {
     }
 
     //Actions
-    public SMSMessagingPage clickSMSMessaging(){
+    public SMS clickSMSMessaging(){
         getSMSMessaging().click();
-        return new SMSMessagingPage();
+        return new SMS();
     }
-
-
 
 }

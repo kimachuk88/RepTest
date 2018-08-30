@@ -37,15 +37,16 @@ public class SMSMessagingPage {
 
     //Actions
 
-    public void fillInMessageBodyField(String message){
+    public void fillInRecipientField(String message) {
+        getRecipient().sendKeys(message);
+        fillInMessageBodyField(message);
+    }
+
+    public void fillInMessageBodyField(String message) {
         getMessageBody().sendKeys(message);
     }
 
-    public void fillInRecipientField(String message){
-        getRecipient().sendKeys(message);
-    }
-
-    public SMSSentPage clickSend(){
+    public SMSSentPage clickSend() {
         getSend().click();
         return new SMSSentPage();
     }
