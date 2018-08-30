@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 
 public class AppPage {
 
+
+
     protected ISearch Search;
 
     public ISearch getSearch() {

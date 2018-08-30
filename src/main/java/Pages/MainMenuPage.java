@@ -1,9 +1,12 @@
 package Pages;
 
 import Tools.ISearch;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 
 public class MainMenuPage {
+    AndroidDriver driver;
 
     ISearch Search;
 
@@ -16,7 +19,7 @@ public class MainMenuPage {
     }
 
     public WebElement getApp() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘App’)]");
+        return Search.XPath("/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[3]");
     }
 
     public WebElement getOS() {
@@ -26,6 +29,12 @@ public class MainMenuPage {
     public WebElement getPreference() {
         return Search.XPath("//android.widget.TextView[contains(text(),‘Preference’)]");
     }
+    public MainMenuPage(AndroidDriver driver) {
+        //this.driver = driver;
+
+        PageFactory.initElements(driver, this);
+    }
+
 
     //Actions
 
