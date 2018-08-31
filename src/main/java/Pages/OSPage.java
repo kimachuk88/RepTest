@@ -1,6 +1,5 @@
 package Pages;
 
-import Tools.ISearch;
 import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
@@ -8,39 +7,31 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class OSPage extends TestRunner {
+
+    //Initialize OSPage
     public OSPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    public ISearch Search;
+    //Map OSPage buttons
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘MMS Messaging’)]")
+    private WebElement getMMSMessaging;
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Morse Code’)]")
+    private WebElement getMorseCode;
 
-    public WebElement getMMSMessaging() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘MMS Messaging’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Rotation Vector’)]")
+    private WebElement getRotationVector;
 
-    public WebElement getMorseCode() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Morse Code’)]");
-    }
-
-    public WebElement getRotationVector() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Rotation Vector’)]");
-    }
     @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
     private WebElement getSMSMessaging;
 
-    public WebElement getTriggerSensors() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘TriggerSensors’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘TriggerSensors’)]")
+    private WebElement getTriggerSensors;
 
     //Actions
+
     public SMSMessagingPage clickSMSMessaging(){
         getSMSMessaging.click();
         return new SMSMessagingPage();

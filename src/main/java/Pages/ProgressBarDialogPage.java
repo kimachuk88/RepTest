@@ -1,53 +1,55 @@
 package Pages;
 
-import Tools.ISearch;
 import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ProgressBarDialogPage extends TestRunner {
 
+    //Initialize ProgressBarDialogPage
     public ProgressBarDialogPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    private ISearch Search;
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    //Map ProgressBarDialogPage buttons
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(id = "android:id/button1")
+    private WebElement getHide;
+    @FindBy(id = "android:id/button2")
+    private WebElement getCancel;
 
-    public WebElement getHide() throws Exception {
-        return Search.Id("android:id/button1");
-    }
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectHeaderText;
 
-    public AlertDialogsPage clickHide() throws Exception {
-        getHide().click();
+    @FindBy(id = "android:id/progress_percent")
+    private WebElement selectPercentageDoneText;
+
+    @FindBy(id = "android:id/progress_number")
+    private WebElement selectProgressOutOfHundreadDoneText;
+
+    //Actions
+
+    public AlertDialogsPage clickHide() {
+        getHide.click();
         return new AlertDialogsPage(driver);
     }
 
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
-    }
-
-    public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
+    public AlertDialogsPage clickCancel() {
+        getCancel.click();
         return new AlertDialogsPage(driver);
     }
 
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
+    public String getHeaderText() {
+        return selectHeaderText.getText();
     }
 
-    public String getPercentageDoneText() throws Exception {
-        return Search.Id("android:id/progress_percent").getText();
+    public String getPercentageDoneText() {
+        return selectPercentageDoneText.getText();
     }
 
-    public String getProgressOutOfHundreadDoneText() throws Exception {
-        return Search.Id("android:id/progress_number").getText();
+    public String getProgressOutOfHundreadDoneText() {
+        return selectProgressOutOfHundreadDoneText.getText();
     }
 }

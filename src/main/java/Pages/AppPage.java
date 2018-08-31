@@ -1,88 +1,67 @@
 package Pages;
 
-import Tools.ISearch;
 import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
 
 public class AppPage extends TestRunner {
+
+    //Init AppPage
+
     public AppPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    protected ISearch Search;
+    //Map AppPage buttons
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Action Bar’)]")
+    private WebElement getActionBar;
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Activity’)]")
+    private WebElement getActivity;
 
-    public WebElement getActionBar() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Action Bar’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Alarm’)]")
+    private WebElement getAlarm;
 
-    public WebElement getActivity() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Activity’)]");
-    }
-
-    public WebElement getAlarm() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Alarm’)]");
-    }
-
-    @FindBy(how = How.XPATH, using = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
     private WebElement getAlertDialogs;
 
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Device Admin’)]")
+    private WebElement getDeviceAdmin;
 
-    public WebElement getDeviceAdmin() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Device Admin’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Fragment’)]")
+    private WebElement getFragment;
 
-    public WebElement getFragment() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Fragment’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Launcher Shortcuts’)]")
+    private WebElement getLauncherShortcuts;
 
-    public WebElement getLauncherShortcuts() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Launcher Shortcuts’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Loader’)]")
+    private WebElement getLoader;
 
-    public WebElement getLoader() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Loader’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Menu’)]")
+    private WebElement Menu;
 
-    public WebElement Menu() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Menu’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Notification’)]")
+    private WebElement getNotification;
 
-    public WebElement getNotification() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Notification’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Print’)]")
+    private WebElement getPrint;
 
-    public WebElement getPrint() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Print’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Search’)]")
+    private WebElement getSearchElement;
 
-    public WebElement getSearchElement() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Search’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Service’)]")
+    private WebElement getService;
 
-    public WebElement getService() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Service’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Text-To-Speech’)]")
+    private WebElement getTextToSpeech;
 
-    public WebElement getTextToSpeech() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Text-To-Speech’)]");
-    }
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Voice Recognition’)]")
+    private WebElement getVoiceRecognition;
 
-    public WebElement getVoiceRecognition() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Voice Recognition’)]");
-    }
 
     //Actions
 

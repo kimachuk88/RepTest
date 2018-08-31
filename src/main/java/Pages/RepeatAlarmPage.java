@@ -1,109 +1,99 @@
 package Pages;
 
-import Tools.ISearch;
 import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class RepeatAlarmPage extends TestRunner {
 
+    //Initialize RepeatAlarmPage
     public RepeatAlarmPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    private ISearch Search;
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    //Map RepeatAlarmPage buttons
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(id = "android:id/button1")
+    private WebElement getOk;
 
+    @FindBy(id = "android:id/button2")
+    private WebElement getCancel;
 
-    public WebElement getOk() throws Exception {
-        return Search.Id("android:id/button1");
-    }
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectHeaderText;
 
-    public AlertDialogsPage clickOk() throws Exception {
-        getOk().click();
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[1]")
+    private WebElement getEveryMonday;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]")
+    private WebElement getEveryTuesday;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[3]")
+    private WebElement getEveryWednesday;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[4]")
+    private WebElement getEveryThursday;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[5]")
+    private WebElement getEveryFriday;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[6]")
+    private WebElement getEverySaturday;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[7]")
+    private WebElement getEverySunday;
+
+    // Actions
+
+    public AlertDialogsPage clickOk() {
+        getOk.click();
         return new AlertDialogsPage(driver);
     }
 
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
-    }
-
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
-    }
-
-    public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
+    public AlertDialogsPage clickCancel() {
+        getCancel.click();
         return new AlertDialogsPage(driver);
     }
 
-    public WebElement getEveryMonday() throws Exception {
-        return Search.XPath("//android.widget.CheckedTextView[contains(text(),'Every Monday')]");
+    public String getHeaderText() {
+        return selectHeaderText.getText();
     }
 
-    public boolean chooseEveryMonday() throws Exception {
-        getEveryMonday().click();
-        return getEveryMonday().isSelected();
+
+    public boolean isEveryMondaySelected() {
+        getEveryMonday.click();
+        return getEveryMonday.isSelected();
     }
 
-    public WebElement getEveryTuesday() throws Exception {
-        return Search.XPath("//android.widget.CheckedTextView[contains(text(),'Every Tuesday')]");
+    public boolean isEveryTuesdaySelected() {
+        getEveryTuesday.click();
+        return getEveryTuesday.isSelected();
     }
 
-    public boolean chooseEveryTuesday() throws Exception {
-        getEveryTuesday().click();
-        return getEveryTuesday().isSelected();
+    public boolean isEveryWednesdaySelected() {
+        getEveryWednesday.click();
+        return getEveryWednesday.isSelected();
     }
 
-    public WebElement getEveryWednesday() throws Exception {
-        return Search.XPath("//android.widget.CheckedTextView[contains(text(),'Every Wednesday')]");
+    public boolean isEveryThursdaySelected() {
+        getEveryThursday.click();
+        return getEveryThursday.isSelected();
     }
 
-    public boolean chooseEveryWednesday() throws Exception {
-        getEveryWednesday().click();
-        return getEveryWednesday().isSelected();
+    public boolean chooseEveryFriday() {
+        getEveryFriday.click();
+        return getEveryFriday.isSelected();
     }
 
-    public WebElement getEveryThursday() throws Exception {
-        return Search.XPath("//android.widget.CheckedTextView[contains(text(),'Every Thursday')]");
+    public boolean isEverySaturdaySelected() {
+        getEverySaturday.click();
+        return getEverySaturday.isSelected();
     }
 
-    public boolean chooseEveryThursday() throws Exception {
-        getEveryThursday().click();
-        return getEveryThursday().isSelected();
-    }
-
-    public WebElement getEveryFriday() throws Exception {
-        return Search.XPath("//android.widget.CheckedTextView[contains(text(),'Every Friday')]");
-    }
-
-    public boolean chooseEveryFriday() throws Exception {
-        getEveryFriday().click();
-        return getEveryFriday().isSelected();
-    }
-
-    public WebElement getEverySaturday() throws Exception {
-        return Search.XPath("//android.widget.CheckedTextView[contains(text(),'Every Saturday')]");
-    }
-
-    public boolean chooseEverySaturday() throws Exception {
-        getEverySaturday().click();
-        return getEverySaturday().isSelected();
-    }
-
-    public WebElement getEverySunday() throws Exception {
-        return Search.XPath("//android.widget.CheckedTextView[contains(text(),'Every Sunday')]");
-    }
-
-    public boolean chooseEverySunday() throws Exception {
-        getEverySunday().click();
-        return getEverySunday().isSelected();
+    public boolean isEverySundaySelected() {
+        getEverySunday.click();
+        return getEverySunday.isSelected();
     }
 }

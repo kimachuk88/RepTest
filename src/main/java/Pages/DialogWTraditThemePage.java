@@ -1,44 +1,43 @@
 package Pages;
 
-import Tools.ISearch;
 import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DialogWTraditThemePage extends TestRunner {
+
+    //Initialize DialogWTraditThemePage
     public DialogWTraditThemePage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
-    private ISearch Search;
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    //Map DialogWDefThemePage buttons
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(id ="android:id/button1")
+    private WebElement getOk;
 
-    public WebElement getOk() throws Exception {
-        return Search.Id("android:id/button1");
-    }
+    @FindBy(id = "android:id/button2")
+    private WebElement getCancel;
 
-    public AlertDialogsPage clickOk() throws Exception {
-        getOk().click();
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectMessageText;
+
+    //Actions
+
+    public AlertDialogsPage clickOk() {
+        getOk.click();
         return new AlertDialogsPage(driver);
     }
 
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
-    }
-
-    public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
+    public AlertDialogsPage clickCancel() {
+        getCancel.click();
         return new AlertDialogsPage(driver);
     }
 
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
+    public String getMessageText() {
+        return selectMessageText.getText();
     }
+
 }

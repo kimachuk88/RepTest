@@ -1,62 +1,56 @@
 package Pages;
 
-import Tools.ISearch;
 import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TxtEntryDialogPage extends TestRunner {
 
+    // Initialize TxtEntryDialogPage
     public TxtEntryDialogPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    private ISearch Search;
+    // Map TxtEntryDialogPage buttons
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    @FindBy(id = "android:id/button1")
+    private WebElement getOk;
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(id = "android:id/button2")
+    private WebElement getCancel;
 
-    public WebElement getOk() throws Exception {
-        return Search.Id("android:id/button1");
-    }
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectHeaderText;
 
-    public AlertDialogsPage clickOk() throws Exception {
-        getOk().click();
+    @FindBy(id = "com.example.android.apis:id/username_edit")
+    private WebElement getNameField;
+
+    @FindBy(id = "com.example.android.apis:id/password_edit")
+    private WebElement getPasswordField;
+
+    // Actions
+
+    public AlertDialogsPage clickOk() {
+        getOk.click();
         return new AlertDialogsPage(driver);
     }
 
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
-    }
-
-    public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
+    public AlertDialogsPage clickCancel() {
+        getCancel.click();
         return new AlertDialogsPage(driver);
     }
 
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
+    public String getHeaderText() {
+        return selectHeaderText.getText();
     }
 
-    public WebElement getNameField() throws Exception {
-        return Search.Id("com.example.android.apis:id/username_edit");
+    public void fillInNameField(String message) {
+        getNameField.sendKeys(message);
     }
 
-    public void fillInNameField(String message) throws Exception {
-        getNameField().sendKeys(message);
-    }
-
-    public WebElement getPasswordField() throws Exception {
-        return Search.Id("com.example.android.apis:id/password_edit");
-    }
-
-    public void fillInPasswordField(String message) throws Exception {
-        getPasswordField().sendKeys(message);
+    public void fillInPasswordField(String message) {
+        getPasswordField.sendKeys(message);
     }
 }
