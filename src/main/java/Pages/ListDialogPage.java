@@ -1,11 +1,12 @@
 package Pages;
 
+import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ListDialogPage {
+public class ListDialogPage extends TestRunner {
 
     //Initialize ListDialogPage
     public ListDialogPage(AndroidDriver driver) {
@@ -30,7 +31,7 @@ public class ListDialogPage {
 
     public CommandOnePage clickCommandOne() {
         getCommandOne.click();
-        return new CommandOnePage();
+        return new CommandOnePage(driver);
     }
 
     public CommandTwoPage clickCommandTwo() {
