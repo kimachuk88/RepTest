@@ -34,7 +34,7 @@ public class OSPage extends TestRunner {
 
     public SMSMessagingPage clickSMSMessaging(){
         getSMSMessaging.click();
-        return new SMSMessagingPage();
+        return new SMSMessagingPage(driver);
     }
 
 

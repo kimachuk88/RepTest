@@ -47,6 +47,6 @@ public class PreferencePage extends TestRunner {
 
     public SwitchPage clickSwitch() {
         getSwitch.click();
-        return new SwitchPage();
+        return new SwitchPage(driver);
     }
 }

@@ -1,49 +1,58 @@
 package Pages;
 
 import Tools.ISearch;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.Collection;
 import java.util.List;
 
 public class SwitchPage {
 
-    ISearch Search;
-    List<WebElement> radioButtons;
 
+    //List<WebElement> radioButtons;
 
-    public ISearch getSearch() {
-        return Search;
+    public SwitchPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[9]")
+    public WebElement getCheckboxPreference;
 
-    public WebElement getCheckboxPreference() {
-        return Search.Id("android:id/checkbox");
-    }
+    @FindBy(id = "android.widget.Switch")
+    public List<WebElement> getRadioButtons;
 
-    public Collection getRadioButtons() {
-        radioButtons = (List<WebElement>) Search.ClassNames("android.widget.Switch");
-        return radioButtons;
-    }
 
     //Actions
-    public boolean clickCheckboxPreference() {
+    public void clickCheckboxPreference() {
 
-        getCheckboxPreference().click();
-
-        return getCheckboxPreference().isSelected();
+        getCheckboxPreference.click();
     }
 
-    public void selectSwithPreferenceFirst() {
-        radioButtons.get(0).click();
+    public boolean isCheckBoxSelected() {
+
+        return getCheckboxPreference.isSelected();
     }
 
-    public void selectSwithPreferenceSecond() {
-        radioButtons.get(1).click();
+    public void selectSwitchPreferenceFirst() {
+
+        getRadioButtons.get(0).click();
     }
 
+    public boolean isSwitchPreferenceFirstSelected() {
 
+        return getCheckboxPreference.isSelected();
+    }
+
+    public void selectSwitchPreferenceSecond() {
+
+        getRadioButtons.get(1).click();
+    }
+
+    public boolean isSwitchPreferenceSecondSelected() {
+
+        return getCheckboxPreference.isSelected();
+    }
 }
