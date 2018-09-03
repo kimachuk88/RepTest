@@ -1,54 +1,56 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class TxtEntryDialogPage {
-    private ISearch Search;
+public class TxtEntryDialogPage extends TestRunner {
 
-    public ISearch getSearch() {
-        return Search;
+    // Initialize TxtEntryDialogPage
+    public TxtEntryDialogPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
+    // Map TxtEntryDialogPage buttons
+
+    @FindBy(id = "android:id/button1")
+    private WebElement getOk;
+
+    @FindBy(id = "android:id/button2")
+    private WebElement getCancel;
+
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectHeaderText;
+
+    @FindBy(id = "com.example.android.apis:id/username_edit")
+    private WebElement getNameField;
+
+    @FindBy(id = "com.example.android.apis:id/password_edit")
+    private WebElement getPasswordField;
+
+    // Actions
+
+    public AlertDialogsPage clickOk() {
+        getOk.click();
+        return new AlertDialogsPage(driver);
     }
 
-    public WebElement getOk() throws Exception {
-        return Search.Id("android:id/button1");
+    public AlertDialogsPage clickCancel() {
+        getCancel.click();
+        return new AlertDialogsPage(driver);
     }
 
-    public AlertDialogsPage clickOk() throws Exception {
-        getOk().click();
-        return new AlertDialogsPage();
+    public String getHeaderText() {
+        return selectHeaderText.getText();
     }
 
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
+    public void fillInNameField(String message) {
+        getNameField.sendKeys(message);
     }
 
-    public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
-        return new AlertDialogsPage();
-    }
-
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
-    }
-
-    public WebElement getNameField() throws Exception {
-        return Search.Id("com.example.android.apis:id/username_edit");
-    }
-
-    public void fillInNameField(String message) throws Exception {
-        getNameField().sendKeys(message);
-    }
-
-    public WebElement getPasswordField() throws Exception {
-        return Search.Id("com.example.android.apis:id/password_edit");
-    }
-
-    public void fillInPasswordField(String message) throws Exception {
-        getPasswordField().sendKeys(message);
+    public void fillInPasswordField(String message) {
+        getPasswordField.sendKeys(message);
     }
 }

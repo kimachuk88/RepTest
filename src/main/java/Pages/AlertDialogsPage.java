@@ -1,151 +1,128 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class AlertDialogsPage {
-    private ISearch Search;
+public class AlertDialogsPage extends TestRunner {
 
-    public ISearch getSearch() {
-        return Search;
+    //Initialize AlertDialogsPage
+
+    public AlertDialogsPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    //Map AlertDialogsPage buttons
 
-    //OK CANCEL DIALOG WITH A MESSAGE
-    public WebElement getDialogWMessage() throws Exception {
-        return Search.Id("com.example.android.apis:id/two_buttons");
-    }
+    @FindBy(id = "com.example.android.apis:id/two_buttons")
+    private WebElement getDialogWMessage;
+
+    @FindBy(id = "com.example.android.apis:id/two_buttons2")
+    private WebElement getDialogWLongMessage;
+
+    @FindBy(id = "com.example.android.apis:id/two_buttons2ultra")
+    private WebElement getDialogWULongMessage;
+
+    @FindBy(id = "com.example.android.apis:id/select_button")
+    private WebElement getListDialog;
+
+    @FindBy(id = "com.example.android.apis:id/progress_button")
+    private WebElement getProgressBarDialog;
+
+    @FindBy(id = "com.example.android.apis:id/progress_spinner_button")
+    private WebElement getProSpinnerDialog;
+
+    @FindBy(id = "com.example.android.apis:id/radio_button")
+    private WebElement getSingleChoiceList;
+
+    @FindBy(id = "com.example.android.apis:id/checkbox_button")
+    private WebElement getRepeatAlarm;
+
+    @FindBy(id = "com.example.android.apis:id/checkbox_button2")
+    private WebElement getCallToVoicemail;
+
+    @FindBy(id = "com.example.android.apis:id/text_entry_button")
+    private WebElement getTxtEntryDialog;
+
+    @FindBy(id = "com.example.android.apis:id/two_buttons_old_school")
+    private WebElement getDialogWTraditTheme;
+
+    @FindBy(id = "com.example.android.apis:id/two_buttons_holo_light")
+    private WebElement getDialogWHoloTheme;
+
+    @FindBy(id = "com.example.android.apis:id/two_buttons_default_light")
+    private WebElement getDialogWDefLightTheme;
+
+    //OK CANCEL DIALOG WITH DEVICEDEFAULT THEME
+    @FindBy(id = "com.example.android.apis:id/two_buttons_default_dark")
+    private WebElement getDialogWDefTheme;
+
+    //Actions
 
     public DialogWMessagePage clickDialogMessage() throws Exception {
-        getDialogWMessage().click();
-        return new DialogWMessagePage();
-    }
-
-    //OK CANCEL DIALOG WITH A LONG MESSAGE
-    public WebElement getDialogWLongMessage() throws Exception {
-        return Search.Id("com.example.android.apis:id/two_buttons2");
+        getDialogWMessage.click();
+        return new DialogWMessagePage(driver);
     }
 
     public DialogWLongMessagePage clickDialogWLongMessage() throws Exception {
-        getDialogWLongMessage().click();
-        return new DialogWLongMessagePage();
-    }
-
-    //OK CANCEL DIALOG WITH ULTRA LONG MESSAGE
-    public WebElement getDialogWULongMessage() throws Exception {
-        return Search.Id("com.example.android.apis:id/two_buttons2ultra");
+        getDialogWLongMessage.click();
+        return new DialogWLongMessagePage(driver);
     }
 
     public DialogWULongMessagePage clickDialogWULongMessage() throws Exception {
-        getDialogWULongMessage().click();
-        return new DialogWULongMessagePage();
-    }
-
-    //LIST DIALOG
-    public WebElement getListDialog() throws Exception {
-        return Search.Id("com.example.android.apis:id/select_button");
+        getDialogWULongMessage.click();
+        return new DialogWULongMessagePage(driver);
     }
 
     public ListDialogPage clickListDialog() throws Exception {
-        getListDialog().click();
-        return new ListDialogPage();
-    }
-
-    //PROGRESS BAR DIALOG
-    public WebElement getProgressBarDialog() throws Exception {
-        return Search.Id("com.example.android.apis:id/progress_button");
+        getListDialog.click();
+        return new ListDialogPage(driver);
     }
 
     public ProgressBarDialogPage clickProgressBarDialog() throws Exception {
-        getProgressBarDialog().click();
-        return new ProgressBarDialogPage();
-    }
-
-    //PROGRESS SPINNER DIALOG
-    public WebElement getProSpinnerDialog() throws Exception {
-        return Search.Id("com.example.android.apis:id/progress_spinner_button");
+        getProgressBarDialog.click();
+        return new ProgressBarDialogPage(driver);
     }
 
     public ProSpinnerDialogPage clickProSpinnerDialog() throws Exception {
-        getProSpinnerDialog().click();
+        getProSpinnerDialog.click();
         return new ProSpinnerDialogPage();
     }
 
-    //SINGLE CHOICE LIST
-    public WebElement getSingleChoiceList() throws Exception {
-        return Search.Id("com.example.android.apis:id/radio_button");
-    }
-
     public SingleChoiceListPage clickSingleChoiceList() throws Exception {
-        getSingleChoiceList().click();
-        return new SingleChoiceListPage();
-    }
-
-    //REPEAT ALARM
-    public WebElement getRepeatAlarm() throws Exception {
-        return Search.Id("com.example.android.apis:id/checkbox_button");
+        getSingleChoiceList.click();
+        return new SingleChoiceListPage(driver);
     }
 
     public RepeatAlarmPage clickRepeatAlarm() throws Exception {
-        getRepeatAlarm().click();
-        return new RepeatAlarmPage();
-    }
-
-    //SEND CALL TO VOICEMAIL
-    public WebElement getCallToVoicemail() throws Exception {
-        return Search.Id("com.example.android.apis:id/checkbox_button2");
-    }
-
-    //TEXT ENTRY DIALOG
-    public WebElement getTxtEntryDialog() throws Exception {
-        return Search.Id("com.example.android.apis:id/text_entry_button");
+        getRepeatAlarm.click();
+        return new RepeatAlarmPage(driver);
     }
 
     public TxtEntryDialogPage clickTxtEntryDialog() throws Exception {
-        getTxtEntryDialog().click();
-        return new TxtEntryDialogPage();
-    }
-
-    //OK CANCEL DIALOG WITH TRADITIONAL THEME
-    public WebElement getDialogWTraditTheme() throws Exception {
-        return Search.Id("com.example.android.apis:id/two_buttons_old_school");
+        getTxtEntryDialog.click();
+        return new TxtEntryDialogPage(driver);
     }
 
     public DialogWTraditThemePage clickDialogWTraditTheme() throws Exception {
-        getDialogWTraditTheme().click();
-        return new DialogWTraditThemePage();
-    }
-
-    //OK CANCEL DIALOG WITH HOLO LIGHT THEME
-    public WebElement getDialogWHoloTheme() throws Exception {
-        return Search.Id("com.example.android.apis:id/two_buttons_holo_light");
+        getDialogWTraditTheme.click();
+        return new DialogWTraditThemePage(driver);
     }
 
     public DialogWHoloThemePage clickDialogWHoloTheme() throws Exception {
-        getDialogWHoloTheme().click();
-        return new DialogWHoloThemePage();
-    }
-
-    //OK CANCEL DIALOG WITH DEVICEDEFAULT LIGHT THEME
-    public WebElement getDialogWDefLightTheme() throws Exception {
-        return Search.Id("com.example.android.apis:id/two_buttons_default_light");
+        getDialogWHoloTheme.click();
+        return new DialogWHoloThemePage(driver);
     }
 
     public DialogWDefLightThemePage clickDialogWDefLightTheme() throws Exception {
-        getDialogWDefLightTheme().click();
-        return new DialogWDefLightThemePage();
-    }
-
-    //OK CANCEL DIALOG WITH DEVICEDEFAULT THEME
-    public WebElement getDialogWDefTheme() throws Exception {
-        return Search.Id("com.example.android.apis:id/two_buttons_default_dark");
+        getDialogWDefLightTheme.click();
+        return new DialogWDefLightThemePage(driver);
     }
 
     public DialogWDefThemePage clickDialogWDefTheme() throws Exception {
-        getDialogWDefTheme().click();
-        return new DialogWDefThemePage();
+        getDialogWDefTheme.click();
+        return new DialogWDefThemePage(driver);
     }
 }

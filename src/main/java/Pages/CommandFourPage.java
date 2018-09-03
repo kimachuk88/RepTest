@@ -1,19 +1,19 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class CommandFourPage extends CommonElementsPage{
-    private ISearch Search;
+public class CommandFourPage extends TestRunner {
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    //Map CommonFourPage buttons
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(id = "android:id/message" )
+    private WebElement selectCommmandFourPageTxt;
+
+    //Actions
 
     public String getCommmandFourPageTxt() throws Exception {
-        return Search.Id("android:id/message").getText();
+        return selectCommmandFourPageTxt.getText();
     }
 }

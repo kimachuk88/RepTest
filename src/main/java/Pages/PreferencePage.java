@@ -1,52 +1,52 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class PreferencePage {
+public class PreferencePage extends TestRunner {
 
-    ISearch Search;
-
-    public ISearch getSearch() {
-        return Search;
-    }
-
-    public void setSearch(ISearch search) {
-        Search = search;
+    //Initialize PreferencePage
+    public PreferencePage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public WebElement getPreferencesFromXML() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘1. Preferences from XML’)]");
-    }
-    public WebElement getLaunchingPreferences() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘2. Launching preferences’)]");
-    }
-    public WebElement getPreferenceDependencies() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘3. Preference dependencies’)]");
-    }
-    public WebElement getDefaultValues() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘4. Default values’)]");
-    }
-    public WebElement getPreferencesFromCode() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘5. Preferences from code’)]");
-    }
-    public WebElement getAdvancedPreferences() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘6. Advanced preferences’)]");
-    }
-    public WebElement getFragment() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘7. Fragment’)]");
-    }
-    public WebElement getHeaders() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘8. Headers’)]");
-    }
-    public WebElement getSwitch() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘9. Switch’)]");
-    }
+    //Map PreferencePage buttons
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘1. Preferences from XML’)]")
+    private WebElement getPreferencesFromXML;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘2. Launching preferences’)]")
+    private WebElement getLaunchingPreferences;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘3. Preference dependencies’)]")
+    private WebElement getPreferenceDependencies;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘4. Default values’)]")
+    private WebElement getDefaultValues;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘5. Preferences from code’)]")
+    private WebElement getPreferencesFromCode;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘6. Advanced preferences’)]")
+    private WebElement getAdvancedPreferences;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘7. Fragment’)]")
+    private WebElement getFragment;
+
+    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘8. Headers’)]")
+    private WebElement getHeaders;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[9]")
+    private WebElement getSwitch;
+
 
     //Actions
 
     public SwitchPage clickSwitch() {
-        getSwitch().click();
+        getSwitch.click();
         return new SwitchPage();
     }
 }
