@@ -18,7 +18,7 @@ public class SwitchPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[9]")
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout")
     public WebElement getCheckboxPreference;
 
     @FindBy(id = "android.widget.Switch")
