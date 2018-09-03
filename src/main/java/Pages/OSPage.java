@@ -1,12 +1,11 @@
 package Pages;
 
-import Tools.TestRunner;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OSPage extends TestRunner {
+public class OSPage {
 
     //Initialize OSPage
     public OSPage(AndroidDriver driver) {
@@ -15,19 +14,19 @@ public class OSPage extends TestRunner {
 
     //Map OSPage buttons
 
-    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘MMS Messaging’)]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘MMS Messaging’]")
     private WebElement getMMSMessaging;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Morse Code’)]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘Morse Code’]")
     private WebElement getMorseCode;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Rotation Vector’)]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘Rotation Vector’]")
     private WebElement getRotationVector;
 
     @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
     private WebElement getSMSMessaging;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘TriggerSensors’)]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘TriggerSensors’]")
     private WebElement getTriggerSensors;
 
     //Actions
