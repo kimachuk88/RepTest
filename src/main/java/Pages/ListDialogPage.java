@@ -1,52 +1,50 @@
 package Pages;
 
-import Tools.ISearch;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class ListDialogPage {
-    private ISearch Search;
 
-    public ISearch getSearch() {
-        return Search;
+    //Initialize ListDialogPage
+    public ListDialogPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    //Map ListDialogPage buttons
 
-    public WebElement getCommandOne() throws Exception {
-        return Search.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]");
-    }
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command one']")
+    private WebElement getCommandOne;
 
-    public CommandOnePage clickCommandOne() throws Exception {
-        getCommandOne().click();
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command two']")
+    private WebElement getCommandTwo;
+
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command three']")
+    private WebElement getCommandThree;
+
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command four']")
+    private WebElement getCommandFour;
+
+    //Actions
+
+    public CommandOnePage clickCommandOne() {
+        getCommandOne.click();
         return new CommandOnePage();
     }
 
-    public WebElement getCommandTwo() throws Exception {
-        return Search.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]");
-    }
-
-    public CommandTwoPage clickCommandTwo() throws Exception {
-        getCommandTwo().click();
+    public CommandTwoPage clickCommandTwo() {
+        getCommandTwo.click();
         return new CommandTwoPage();
     }
 
-    public WebElement getCommandThree() throws Exception {
-        return Search.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[3]");
-    }
-
-    public CommandThreePage clickCommandThree() throws Exception {
-        getCommandThree().click();
+    public CommandThreePage clickCommandThree() {
+        getCommandThree.click();
         return new CommandThreePage();
     }
 
-    public WebElement getCommandFour() throws Exception {
-        return Search.XPath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[4]");
-    }
-
-    public CommandFourPage clickCommandFour() throws Exception {
-        getCommandFour().click();
+    public CommandFourPage clickCommandFour() {
+        getCommandFour.click();
         return new CommandFourPage();
     }
 }

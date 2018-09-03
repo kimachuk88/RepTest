@@ -1,19 +1,18 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
-public class ProSpinnerDialogPage {
-    private ISearch Search;
+public class ProSpinnerDialogPage extends TestRunner {
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    //Map ProSpinnerDialogPage
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectHeaderText;
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    //Actions
 
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
+    private String getHeaderText() {
+        return selectHeaderText.getText();
     }
 }

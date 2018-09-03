@@ -25,9 +25,9 @@ public class SMSSentPage {
 
     //Actions
 
-    public SMSMessagingPage clickOk(){
+    /*public SMSMessagingPage clickOk(){
         getOk().click();
-        return new SMSMessagingPage();
-    }
+        return new SMSMessagingPage(driver);
+    }*/
 
 }

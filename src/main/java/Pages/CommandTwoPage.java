@@ -1,19 +1,19 @@
 package Pages;
 
-import Tools.ISearch;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class CommandTwoPage {
-    private ISearch Search;
 
-    public ISearch getSearch() {
-        return Search;
-    }
+    //Map CommonTwoPage buttons
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(id = "android:id/message" )
+    private WebElement selectCommmandTwoPageTxt;
+
+    //Actions
 
     public String getCommmandTwoPageTxt() throws Exception {
-        return Search.Id("android:id/message").getText();
+        return selectCommmandTwoPageTxt.getText();
     }
+
 }

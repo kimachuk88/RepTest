@@ -1,44 +1,43 @@
 package Pages;
 
-import Pages.MessageToSendProtocol.SMS;
-import Tools.ISearch;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class OSPage {
 
-    public ISearch Search;
-
-    public ISearch getSearch() {
-        return Search;
+    //Initialize OSPage
+    public OSPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    //Map OSPage buttons
 
-    public WebElement getMMSMessaging() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘MMS Messaging’)]");
-    }
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘MMS Messaging’]")
+    private WebElement getMMSMessaging;
 
-    public WebElement getMorseCode() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Morse Code’)]");
-    }
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘Morse Code’]")
+    private WebElement getMorseCode;
 
-    public WebElement getRotationVector() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘Rotation Vector’)]");
-    }
-    public WebElement getSMSMessaging() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘SMS Messaging’)]");
-    }
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘Rotation Vector’]")
+    private WebElement getRotationVector;
 
-    public WebElement getTriggerSensors() {
-        return Search.XPath("//android.widget.TextView[contains(text(),‘TriggerSensors’)]");
-    }
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
+    private WebElement getSMSMessaging;
+
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text=‘TriggerSensors’]")
+    private WebElement getTriggerSensors;
 
     //Actions
-    public SMS clickSMSMessaging(){
-        getSMSMessaging().click();
-        return new SMS();
+
+    public SMSMessagingPage clickSMSMessaging(){
+        getSMSMessaging.click();
+        return new SMSMessagingPage(driver);
     }
+
+
+
+
 
 }

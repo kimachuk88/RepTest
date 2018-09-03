@@ -1,53 +1,57 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class DialogWULongMessagePage {
-    private ISearch Search;
+public class DialogWULongMessagePage extends TestRunner {
 
-    public ISearch getSearch() {
-        return Search;
+    //Initialize DialogWULongMessagePage
+    public DialogWULongMessagePage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
+    //Map DialogWULongMessagePage buttons
+
+    @FindBy(id = "android:id/button1")
+    private WebElement getOk;
+
+    @FindBy(id = "android:id/button2")
+    public WebElement getCancel;
+
+    @FindBy(id = "android:id/button3")
+    public WebElement getSomething;
+
+    @FindBy(id = "android:id/message")
+    private WebElement selectMessageText;
+
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectHeaderText;
+
+    //Actions
+
+    public AlertDialogsPage clickOk() {
+        getOk.click();
+        return new AlertDialogsPage(driver);
     }
 
-    public WebElement getOk() throws Exception {
-        return Search.Id("android:id/button1");
+    public AlertDialogsPage clickCancel() {
+        getCancel.click();
+        return new AlertDialogsPage(driver);
     }
 
-    public AlertDialogsPage clickOk() throws Exception {
-        getOk().click();
-        return new AlertDialogsPage();
+    public AlertDialogsPage clickSomething() {
+        getSomething.click();
+        return new AlertDialogsPage(driver);
     }
 
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
+    public String getMessageText() {
+        return selectMessageText.getText();
     }
 
-    public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
-        return new AlertDialogsPage();
-    }
-
-    public WebElement getSomething() throws Exception {
-        return Search.Id("android:id/button3");
-    }
-
-    public AlertDialogsPage clickSomething() throws Exception {
-        getSomething().click();
-        return new AlertDialogsPage();
-    }
-
-    public String getMessageText() throws Exception {
-        return Search.Id("android:id/message").getText();
-    }
-
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
+    private String getHeaderText() {
+        return selectHeaderText.getText();
     }
 }
-
-

@@ -26,9 +26,6 @@ public interface ISearch {
     Collection<WebElement> ClassNames(String className);
 
 
-
-
-
     //WebElement GetWebElement(By by, WebElement fromWebElement);
 
     //Collection<WebElement> GetWebElements(By by, WebElement fromWebElement);

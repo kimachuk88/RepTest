@@ -1,54 +1,55 @@
 package Pages;
 
 import Tools.ISearch;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SMSMessagingPage {
 
-    ISearch Search;
-
-    public ISearch getSearch() {
-        return Search;
+    public SMSMessagingPage(AndroidDriver driver){
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
-    }
+    @FindBy(id = "WARNING: this demo can send actual text messages (one at a time), so be sure to test with the Android emulator or have a text messaging plan with your carrier.")
+    public WebElement getWarning;
 
-    public String getWarning() {
-        return Search.Id("WARNING: this demo can send actual text messages (one at a time), so be sure to test with the Android emulator or have a text messaging plan with your carrier.").getText();
-    }
+    @FindBy(id = "com.example.android.apis:id/sms_enable_receiver")
+    public WebElement getEnableSMSBroadcast;
 
-    public WebElement getEnableSMSBroadcast() {
-        return Search.Id("com.example.android.apis:id/sms_enable_receiver");
-    }
+    @FindBy(id = "com.example.android.apis:id/sms_send_message")
+    public WebElement getSend;
 
-    public WebElement getSend() {
-        return Search.Id("io.appium.android.apis:id/sms_send_message");
-    }
+    @FindBy(id = "com.example.android.apis:id/sms_content")
+    public WebElement getMessageBody;
 
-    public WebElement getMessageBody() {
-        return Search.Id("io.appium.android.apis:id/sms_content");
-    }
+    @FindBy(id = "com.example.android.apis:id/sms_recipient")
+    public WebElement getRecipient;
 
-    public WebElement getRecipient() {
-        return Search.Id("io.appium.android.apis:id/sms_recipient");
-    }
+    @FindBy(id = "android:id/contentPanel")
+    public WebElement getMessage;
 
     //Actions
 
+    public void clickEnableBrodcast(){
+        getEnableSMSBroadcast.click();
+    }
+
     public void fillInRecipientField(String message) {
-        getRecipient().sendKeys(message);
-        fillInMessageBodyField(message);
+        getRecipient.sendKeys(message);
     }
 
     public void fillInMessageBodyField(String message) {
-        getMessageBody().sendKeys(message);
+        getMessageBody.sendKeys(message);
     }
 
     public SMSSentPage clickSend() {
-        getSend().click();
+        getSend.click();
         return new SMSSentPage();
     }
 
+    public String getMessageText(){
+        return getMessage.getText();
+    }
 }

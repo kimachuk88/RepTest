@@ -1,46 +1,55 @@
 package Pages;
 
-import Tools.ISearch;
+import Tools.TestRunner;
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class ProgressBarDialogPage {
-    private ISearch Search;
+public class ProgressBarDialogPage extends TestRunner {
 
-    public ISearch getSearch() {
-        return Search;
+    //Initialize ProgressBarDialogPage
+    public ProgressBarDialogPage(AndroidDriver driver) {
+        PageFactory.initElements(driver, this);
     }
 
-    public void setSearch(ISearch search) {
-        Search = search;
+    //Map ProgressBarDialogPage buttons
+
+    @FindBy(id = "android:id/button1")
+    private WebElement getHide;
+    @FindBy(id = "android:id/button2")
+    private WebElement getCancel;
+
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectHeaderText;
+
+    @FindBy(id = "android:id/progress_percent")
+    private WebElement selectPercentageDoneText;
+
+    @FindBy(id = "android:id/progress_number")
+    private WebElement selectProgressOutOfHundreadDoneText;
+
+    //Actions
+
+    public AlertDialogsPage clickHide() {
+        getHide.click();
+        return new AlertDialogsPage(driver);
     }
 
-    public WebElement getHide() throws Exception {
-        return Search.Id("android:id/button1");
+    public AlertDialogsPage clickCancel() {
+        getCancel.click();
+        return new AlertDialogsPage(driver);
     }
 
-    public AlertDialogsPage clickHide() throws Exception {
-        getHide().click();
-        return new AlertDialogsPage();
+    public String getHeaderText() {
+        return selectHeaderText.getText();
     }
 
-    public WebElement getCancel() throws Exception {
-        return Search.Id("android:id/button2");
+    public String getPercentageDoneText() {
+        return selectPercentageDoneText.getText();
     }
 
-    public AlertDialogsPage clickCancel() throws Exception {
-        getCancel().click();
-        return new AlertDialogsPage();
-    }
-
-    public String getHeaderText() throws Exception {
-        return Search.Id("android:id/alertTitle").getText();
-    }
-
-    public String getPercentageDoneText() throws Exception {
-        return Search.Id("android:id/progress_percent").getText();
-    }
-
-    public String getProgressOutOfHundreadDoneText() throws Exception {
-        return Search.Id("android:id/progress_number").getText();
+    public String getProgressOutOfHundreadDoneText() {
+        return selectProgressOutOfHundreadDoneText.getText();
     }
 }
