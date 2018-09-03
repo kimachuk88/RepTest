@@ -15,13 +15,14 @@ public class MainMenuPage extends TestRunner {
 
     //Map MainMenuPage buttons
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[3]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='App']")
     private WebElement getApp;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[9]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='OS']")
     private WebElement getOS;
 
-    @FindBy(xpath = "//android.widget.TextView[contains(text(),‘Preference’)]")
+
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Preference']")
     private WebElement getPreference;
 
     //Actions

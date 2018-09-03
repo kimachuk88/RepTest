@@ -20,6 +20,7 @@ public class TestRunner {
 
 
     @Before
+
     public void setCaps() {
         //this.caps = caps;
         caps.setCapability("app", APP_URL);

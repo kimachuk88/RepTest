@@ -24,16 +24,16 @@ public class SingleChoiceListPage extends TestRunner {
     @FindBy(id = "android:id/alertTitle")
     private WebElement selectHeaderText;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[1]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Map']")
     private WebElement getMap;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Satellite']")
     private WebElement getSatellite;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[3]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Traffic']")
     private WebElement getTraffic;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[4]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Street view']")
     public WebElement getStreetView;
 
 

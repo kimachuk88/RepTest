@@ -24,25 +24,25 @@ public class RepeatAlarmPage extends TestRunner {
     @FindBy(id = "android:id/alertTitle")
     private WebElement selectHeaderText;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[1]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Monday']")
     private WebElement getEveryMonday;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[2]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Tuesday']")
     private WebElement getEveryTuesday;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[3]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Wednesday']")
     private WebElement getEveryWednesday;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[4]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Thursday']")
     private WebElement getEveryThursday;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[5]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Friday']")
     private WebElement getEveryFriday;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[6]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Saturday']")
     private WebElement getEverySaturday;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView[7]")
+    @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Sunday']")
     private WebElement getEverySunday;
 
     // Actions
