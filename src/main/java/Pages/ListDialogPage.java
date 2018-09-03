@@ -14,16 +14,16 @@ public class ListDialogPage {
 
     //Map ListDialogPage buttons
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[1]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command one']")
     private WebElement getCommandOne;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[2]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command two']")
     private WebElement getCommandTwo;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[3]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command three']")
     private WebElement getCommandThree;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.TextView[4]")
+    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Command four']")
     private WebElement getCommandFour;
 
     //Actions

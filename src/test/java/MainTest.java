@@ -74,11 +74,11 @@ public class MainTest extends TestRunner {
         appPage.clickAlertDialogs();
 
         AlertDialogsPage alertDialogsPage = new AlertDialogsPage(driver);
-        alertDialogsPage.clickDialogWLongMessage();
+        alertDialogsPage.clickListDialog();
 
         ListDialogPage listDialogPage = new ListDialogPage(driver);
 
-        listDialogPage.clickCommandOne();
+        listDialogPage.clickCommandTwo();
 
         String expected = "You selected:";
         CommandOnePage commandOnePage = new CommandOnePage();
