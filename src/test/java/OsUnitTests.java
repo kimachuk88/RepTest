@@ -1,60 +1,65 @@
-import Pages.DialogWDefLightThemePage;
-import Pages.MainMenuPage;
-import Tools.ISearch;
-import Tools.SearchElement;
 import Tools.TestRunner;
 import org.junit.*;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Instant;
-
 
 public class OsUnitTests extends TestRunner {
 
     @Test
-    public void sendSMSwithValidFields() throws Exception{
+    public void checkValidWarningMessage() {
+        mainMenuPage.clickOS();
+        osPage.clickSMSMessaging();
+        String expected = "WARNING: this demo can send actual text messages (one at a time), so be sure to test with the Android emulator or have a text messaging plan with your carrier.";
+        String actual = smsMessagingPage.getWarningMessageText();
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void sendSMSWithValidFields() {
         mainMenuPage.clickOS();
         osPage.clickSMSMessaging();
         smsMessagingPage.fillInRecipientField("recipient field");
         smsMessagingPage.fillInMessageBodyField("message body field");
         smsMessagingPage.clickSend();
 
-        //WebDriverWait wait = new WebDriverWait(driver, 60);
-        //wait.until(ExpectedConditions.alertIsPresent());
-        //Thread.sleep(3000);
-        //Alert alert = driver.switchTo().alert();
-        //alert.accept();
-        String mm = smsMessagingPage.getMessageText();
-
+        String realMessage = smsMessagingPage.getMessageText();
+        String expectedMessage = "You have successfully sent SMS";
+        Assert.assertEquals(realMessage, expectedMessage);
     }
+
     @Test
-    public void sendSMSwithInvalidRecipient() {
+    public void sendSMSWithInvalidRecipient() {
         mainMenuPage.clickOS();
         osPage.clickSMSMessaging();
         smsMessagingPage.fillInRecipientField("");
         smsMessagingPage.fillInMessageBodyField("message body field");
         smsMessagingPage.clickSend();
+        int messageSize = smsMessagingPage.getMessage.size();
+        Assert.assertEquals(messageSize, 0);
     }
+
     @Test
-    public void sendSMSwithInvalidMessage() {
+    public void sendSMSWithInvalidMessage() {
         mainMenuPage.clickOS();
         osPage.clickSMSMessaging();
         smsMessagingPage.fillInRecipientField("recipient field");
         smsMessagingPage.fillInMessageBodyField("");
         smsMessagingPage.clickSend();
+        int messageSize = smsMessagingPage.getMessage.size();
+        Assert.assertEquals(messageSize, 0);
     }
 
     @Test
-    public void sendSMSwithBroadcastEnabled() {
+    public void sendSMSWithBroadcastEnabled() {
         mainMenuPage.clickOS();
         osPage.clickSMSMessaging();
-        smsMessagingPage.clickEnableBrodcast();
+        if (!smsMessagingPage.isBroadcastEnabled()) {
+            smsMessagingPage.clickEnableBrodcast();
+        }
         smsMessagingPage.fillInRecipientField("recipient field");
         smsMessagingPage.fillInMessageBodyField("message body field");
         smsMessagingPage.clickSend();
+
+        String realMessage = smsMessagingPage.getMessageText();
+        String expectedMessage = "You have successfully sent a SMS";
+        Assert.assertEquals(realMessage, expectedMessage);
     }
 }

@@ -6,14 +6,16 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class SMSMessagingPage {
 
-    public SMSMessagingPage(AndroidDriver driver){
+    public SMSMessagingPage(AndroidDriver driver) {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "WARNING: this demo can send actual text messages (one at a time), so be sure to test with the Android emulator or have a text messaging plan with your carrier.")
-    public WebElement getWarning;
+    @FindBy(className = "android.widget.TextView")
+    public List<WebElement> getWarning;
 
     @FindBy(id = "com.example.android.apis:id/sms_enable_receiver")
     public WebElement getEnableSMSBroadcast;
@@ -28,19 +30,29 @@ public class SMSMessagingPage {
     public WebElement getRecipient;
 
     @FindBy(id = "android:id/contentPanel")
-    public WebElement getMessage;
+    public List<WebElement> getMessage;
 
     //Actions
 
-    public void clickEnableBrodcast(){
+    public String getWarningMessageText(){
+        return getWarning.get(1).getText();
+    }
+    public void clickEnableBrodcast() {
         getEnableSMSBroadcast.click();
     }
 
+    public boolean isBroadcastEnabled() {
+
+        return getEnableSMSBroadcast.getAttribute("checked").equals("true");
+    }
+
     public void fillInRecipientField(String message) {
+
         getRecipient.sendKeys(message);
     }
 
     public void fillInMessageBodyField(String message) {
+
         getMessageBody.sendKeys(message);
     }
 
@@ -49,7 +61,8 @@ public class SMSMessagingPage {
         return new SMSSentPage();
     }
 
-    public String getMessageText(){
-        return getMessage.getText();
+    public String getMessageText() {
+
+        return getMessage.get(0).getText();
     }
 }

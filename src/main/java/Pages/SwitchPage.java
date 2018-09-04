@@ -18,11 +18,18 @@ public class SwitchPage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[1]/android.widget.LinearLayout")
+    @FindBy(id = "android:id/checkbox")
     public WebElement getCheckboxPreference;
 
-    @FindBy(id = "android.widget.Switch")
+    @FindBy(className = "android.widget.Switch")
     public List<WebElement> getRadioButtons;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.Switch")
+    public WebElement getRadioButton1;
+
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[3]/android.widget.LinearLayout/android.widget.Switch")
+    public WebElement getRadioButton2;
+
 
 
     //Actions
@@ -33,26 +40,28 @@ public class SwitchPage {
 
     public boolean isCheckBoxSelected() {
 
-        return getCheckboxPreference.isSelected();
+        return getCheckboxPreference.getAttribute("checked").equals("true");
     }
 
     public void selectSwitchPreferenceFirst() {
 
-        getRadioButtons.get(0).click();
+        getRadioButton1.click();
     }
 
     public boolean isSwitchPreferenceFirstSelected() {
 
-        return getCheckboxPreference.isSelected();
+        return getRadioButton1.getAttribute("checked").equals("true");
     }
 
     public void selectSwitchPreferenceSecond() {
 
-        getRadioButtons.get(1).click();
+        //getRadioButtons.get(1).click();
+        getRadioButton2.click();
     }
 
     public boolean isSwitchPreferenceSecondSelected() {
 
-        return getCheckboxPreference.isSelected();
+        // return getRadioButtons.get(1).isSelected();
+        return getRadioButton2.getAttribute("checked").equals("true");
     }
 }
