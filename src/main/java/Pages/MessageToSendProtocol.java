@@ -1,9 +1,9 @@
 package Pages;
 
-import Tools.ISearch;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
+/*
 
 public class MessageToSendProtocol {
 
@@ -93,5 +93,5 @@ public class MessageToSendProtocol {
 
     }
 }
-
+*/
 

@@ -1,6 +1,5 @@
 package Pages;
 
-import Tools.ISearch;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -56,9 +55,8 @@ public class SMSMessagingPage {
         getMessageBody.sendKeys(message);
     }
 
-    public SMSSentPage clickSend() {
+    public void clickSend() {
         getSend.click();
-        return new SMSSentPage();
     }
 
     public String getMessageText() {
