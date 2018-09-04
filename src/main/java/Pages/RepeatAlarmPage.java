@@ -6,6 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class RepeatAlarmPage extends TestRunner {
 
     //Initialize RepeatAlarmPage
@@ -45,6 +50,9 @@ public class RepeatAlarmPage extends TestRunner {
     @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Every Sunday']")
     private WebElement getEverySunday;
 
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.CheckedTextView")
+    private List<WebElement>getDaysOfTheWeek;
+
     // Actions
 
     public AlertDialogsPage clickOk() {
@@ -61,39 +69,83 @@ public class RepeatAlarmPage extends TestRunner {
         return selectHeaderText.getText();
     }
 
-
-    public boolean isEveryMondaySelected() {
+    public void clickEveryMonday() {
         getEveryMonday.click();
-        return getEveryMonday.isSelected();
+        //return getEveryMonday.isEnabled();
+    }
+    public void clickEveryTuesday() {
+        getEveryTuesday.click();
+        //return getEveryTuesday.isEnabled();
+    }
+    public void clickEveryWednesday() {
+        getEveryWednesday.click();
+        //return getEveryWednesday.isSelected();
+    }
+    public void clickEveryThursday() {
+        getEveryThursday.click();
+        //return getEveryThursday.isSelected();
+    }
+    public void clickEveryFriday() {
+        getEveryFriday.click();
+        //return getEveryFriday.isSelected();
+    }
+    public void clickEverySaturday() {
+        getEverySaturday.click();
+        //return getEverySaturday.isSelected();
+    }
+    public void clickEverySunday() {
+        getEverySunday.click();
+        //return getEverySunday.isSelected();
+    }
+
+    //Get name and index of the buttons & create Map
+
+    public String getName(WebElement element) {
+        return element.getAttribute("text");
+    }
+
+    public List<String> getText(){
+        List<String> daysOfTheWeek = new ArrayList<String>();
+        for (WebElement element : getDaysOfTheWeek){
+            daysOfTheWeek.add(element.getText());
+        }
+        return  daysOfTheWeek;
+    }
+
+    public Map<Integer, String> setActualMap() {
+        Map<Integer, String> actual = new HashMap<>();
+        for (int i = 0; i < getText().size(); i++) {
+            actual.put(i, getText().get(i));
+        }
+        return actual;
+    }
+
+    //Check if selected checkbox
+    public boolean isEveryMondaySelected() {
+        return getEveryMonday.getAttribute("checked").equals("true");
     }
 
     public boolean isEveryTuesdaySelected() {
-        getEveryTuesday.click();
-        return getEveryTuesday.isSelected();
+        return getEveryTuesday.getAttribute("checked").equals("true");
     }
 
     public boolean isEveryWednesdaySelected() {
-        getEveryWednesday.click();
-        return getEveryWednesday.isSelected();
+        return getEveryWednesday.getAttribute("checked").equals("true");
     }
 
     public boolean isEveryThursdaySelected() {
-        getEveryThursday.click();
-        return getEveryThursday.isSelected();
+        return getEveryThursday.getAttribute("checked").equals("true");
     }
 
-    public boolean chooseEveryFriday() {
-        getEveryFriday.click();
-        return getEveryFriday.isSelected();
+    public boolean isEveryFridaySelected() {
+        return getEveryFriday.getAttribute("checked").equals("true");
     }
 
     public boolean isEverySaturdaySelected() {
-        getEverySaturday.click();
-        return getEverySaturday.isSelected();
+        return getEverySaturday.getAttribute("checked").equals("true");
     }
 
     public boolean isEverySundaySelected() {
-        getEverySunday.click();
-        return getEverySunday.isSelected();
+        return getEverySunday.getAttribute("checked").equals("true");
     }
 }

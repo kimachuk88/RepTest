@@ -34,6 +34,12 @@ public class TestRunner {
     protected DialogWDefLightThemePage dialogWDefLightThemePage;
     protected DialogWDefThemePage dialogWDefThemePage;
     protected DialogWHoloThemePage dialogWHoloThemePage;
+    protected ProgressBarDialogPage progressBarDialogPage;
+    protected ProSpinnerDialogPage proSpinnerDialogPage;
+    protected SingleChoiceListPage singleChoiceListPage;
+    protected RepeatAlarmPage repeatAlarmPage;
+    protected TxtEntryDialogPage txtEntryDialogPage;
+
 
 
 
@@ -75,6 +81,12 @@ public class TestRunner {
         smsMessagingPage = new SMSMessagingPage(driver);
         switchPage = new SwitchPage(driver);
         commandOnePage = new CommandOnePage(driver);
+        progressBarDialogPage = new ProgressBarDialogPage(driver);
+        //proSpinnerDialogPage = new ProSpinnerDialogPage(driver);
+        singleChoiceListPage = new SingleChoiceListPage(driver);
+        repeatAlarmPage = new RepeatAlarmPage(driver);
+        txtEntryDialogPage = new TxtEntryDialogPage(driver);
+
     }
 
     @After
