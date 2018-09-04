@@ -39,7 +39,8 @@ public class PreferencePage extends TestRunner {
     @FindBy(xpath = "//android.widget.TextView[contains(text(),‘8. Headers’)]")
     private WebElement getHeaders;
 
-    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[9]")
+    //@FindBy(xpath = "//*[@class='android.widget.TextView' and @instance='9']")
+    @FindBy(xpath = "//*[@class='android.widget.TextView'][9]")
     private WebElement getSwitch;
 
 
