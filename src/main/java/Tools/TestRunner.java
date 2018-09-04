@@ -17,9 +17,26 @@ public class TestRunner {
     final int TIME_OUT = 15;
     protected MainMenuPage mainMenuPage;
     protected OSPage osPage;
+    protected AppPage appPage;
     protected SMSMessagingPage smsMessagingPage;
     protected PreferencePage preferencePage;
     protected SwitchPage switchPage;
+    protected AlertDialogsPage alertDialogsPage;
+    protected ListDialogPage listDialogPage;
+    protected CommandOnePage commandOnePage;
+    protected CommandTwoPage commandTwoPage;
+    protected CommandThreePage commandThreePage;
+    protected CommandFourPage commandFourPage;
+    protected DialogWLongMessagePage dialogWLongMessagePage;
+    protected DialogWULongMessagePage dialogWULongMessagePage;
+    protected DialogWMessagePage dialogWMessagePage;
+    protected DialogWTraditThemePage dialogWTraditThemePage;
+    protected DialogWDefLightThemePage dialogWDefLightThemePage;
+    protected DialogWDefThemePage dialogWDefThemePage;
+    protected DialogWHoloThemePage dialogWHoloThemePage;
+
+
+
 
     DesiredCapabilities caps = new DesiredCapabilities();
 
@@ -43,11 +60,21 @@ public class TestRunner {
                 e.printStackTrace();
             }
         }
+        alertDialogsPage = new AlertDialogsPage(driver);
+        appPage = new AppPage(driver);
+        dialogWULongMessagePage = new DialogWULongMessagePage(driver);
+        dialogWMessagePage = new DialogWMessagePage(driver);
+        dialogWLongMessagePage = new DialogWLongMessagePage(driver);
+        dialogWDefLightThemePage = new DialogWDefLightThemePage(driver);
+        dialogWHoloThemePage = new DialogWHoloThemePage(driver);
+        dialogWTraditThemePage = new DialogWTraditThemePage(driver);
+        listDialogPage = new ListDialogPage(driver);
         mainMenuPage = new MainMenuPage(driver);
         osPage = new OSPage(driver);
-        smsMessagingPage = new SMSMessagingPage(driver);
         preferencePage = new PreferencePage(driver);
+        smsMessagingPage = new SMSMessagingPage(driver);
         switchPage = new SwitchPage(driver);
+        commandOnePage = new CommandOnePage(driver);
     }
 
     @After
