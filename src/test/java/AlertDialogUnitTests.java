@@ -3,7 +3,7 @@ import Tools.TestRunner;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class MainTest extends TestRunner {
+public class AlertDialogUnitTests extends TestRunner {
 
 
     @Test
