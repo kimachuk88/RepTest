@@ -90,14 +90,13 @@ public class AlertDialogUnitTests extends TestRunner {
     }
 
    @Test
-   public void SingleChoiceListTest1() throws Exception {
+   public void RepeatTest1() throws Exception {
        //Navigate
        mainMenuPage.clickApp();
        appPage.clickAlertDialogs();
        alertDialogsPage.clickRepeatAlarm();
 
        //Enable all
-
        if (!repeatAlarmPage.isEveryMondaySelected()) {
            repeatAlarmPage.clickEveryMonday();
        }
@@ -136,9 +135,9 @@ public class AlertDialogUnitTests extends TestRunner {
    }
 
    @Test
-   public void SingleChoiceTest2() throws Exception {
+   public void RepeatAlarmTest2() throws Exception {
 
-        //Expected result
+       //Expected result
        Map<Integer, String> expected = new HashMap<Integer, String>();
        expected.put(0, "Every Monday");
        expected.put(1, "Every Tuesday");
@@ -148,16 +147,34 @@ public class AlertDialogUnitTests extends TestRunner {
        expected.put(5, "Every Saturday");
        expected.put(6, "Every Sunday");
 
-        //Navigate
+       //Navigate
        mainMenuPage.clickApp();
        appPage.clickAlertDialogs();
        alertDialogsPage.clickRepeatAlarm();
 
-
-
-
       //Reading actual result
       Assert.assertEquals(expected, repeatAlarmPage.setActualMap());
 
+   }
+
+   @Test
+    public void SingleChoiceListTest() throws Exception {
+
+       //Navigate
+       mainMenuPage.clickApp();
+       appPage.clickAlertDialogs();
+       alertDialogsPage.clickSingleChoiceList();
+
+       //Test: choose one button and check if 3 others are unchecked.
+       for(int i = 0; i < singleChoiceListPage.getAllChoiceButtons.size(); i++) {
+           singleChoiceListPage.getAllChoiceButtons.get(i).click();
+           singleChoiceListPage.getIsChecked();
+           Assert.assertEquals("true",singleChoiceListPage.setActualMap().get(i));
+           for(int j = 0; j < singleChoiceListPage.getAllChoiceButtons.size(); j++) {
+               if (j != i) {
+                   Assert.assertEquals("false", singleChoiceListPage.setActualMap().get(j));
+               }
+           }
+       }
    }
 }

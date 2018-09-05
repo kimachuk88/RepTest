@@ -3,27 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0b7df6b9-a448-487e-b1d2-cc7c03a0518f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/MessageToSendProtocol$IMessage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/MessageToSendProtocol$IMessageBody.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/MessageToSendProtocol$IRecepient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/MessageToSendProtocol$ISendButtonClick.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/MessageToSendProtocol$SMS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/MessageToSendProtocol.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/RepeatAlarmPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Pages/RepeatAlarmPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/SMSMessagingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Pages/SMSMessagingPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/SMSSentPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Pages/SwitchPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/Pages/SwitchPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Tools/ASearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Tools/ISearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/Tools/SearchElement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/OsUnitTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/classes/OsUnitTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/MessageToSendProtocol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/MessageToSendProtocol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/SMSMessagingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/SMSMessagingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/SMSSentPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/SwitchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/SwitchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tools/ASearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tools/ISearch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tools/SearchElement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/RepeatAlarmPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/RepeatAlarmPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Pages/SingleChoiceListPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Pages/SingleChoiceListPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/AlertDialogUnitTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AlertDialogUnitTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -78,25 +60,25 @@
     <session id="-91481865">
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="39" />
+          <entry key="java" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="39" />
+          <entry key="JAVA" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="20" />
-          <entry key="java" value="759" />
-          <entry key="txt" value="67" />
+          <entry key="java" value="1582" />
+          <entry key="txt" value="98" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="759" />
-          <entry key="PLAIN_TEXT" value="87" />
+          <entry key="JAVA" value="1582" />
+          <entry key="PLAIN_TEXT" value="118" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -110,11 +92,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/AlertDialogUnitTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="568">
-              <caret line="150" column="18" lean-forward="true" selection-start-line="150" selection-start-column="18" selection-end-line="150" selection-end-column="18" />
+            <state relative-caret-position="213">
+              <caret line="160" column="36" lean-forward="true" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="36" />
               <folding>
                 <element signature="e#4086#4103#0" expanded="true" />
               </folding>
@@ -123,39 +105,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/internal/runners/statements/RunAfters.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/PreferenceSwitchTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="38" selection-start-line="38" selection-end-line="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="370" selection-start-line="370" selection-end-line="370" />
+            <state relative-caret-position="17">
+              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding>
-                <element signature="e#2922#2923#0" expanded="true" />
-                <element signature="e#2966#2967#0" expanded="true" />
-                <element signature="e#10310#10449#0" expanded="true" />
-                <element signature="e#10448#10449#0" expanded="true" />
-                <element signature="e#11040#11204#0" expanded="true" />
-                <element signature="e#11203#11204#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Pages/SingleChoiceListPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+              <folding>
+                <element signature="e#1634#1642#0" expanded="true" />
+                <element signature="e#2283#2284#0" expanded="true" />
+                <element signature="e#2332#2333#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Pages/AlertDialogsPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Pages/RepeatAlarmPage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1484">
-              <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+            <state relative-caret-position="182">
+              <caret line="52" column="90" selection-start-line="52" selection-start-column="90" selection-end-line="52" selection-end-column="90" />
               <folding>
-                <element signature="e#3090#3091#0" expanded="true" />
-                <element signature="e#3141#3142#0" expanded="true" />
                 <element signature="e#3549#3557#0" expanded="true" />
                 <element signature="e#4506#4507#0" expanded="true" />
                 <element signature="e#4582#4583#0" expanded="true" />
@@ -172,49 +164,6 @@
                 <element signature="e#5254#5255#0" expanded="true" />
                 <element signature="e#5330#5331#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Pages/SMSMessagingPage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="58" column="24" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-              <folding>
-                <element signature="e#1508#1509#0" expanded="true" />
-                <element signature="e#1539#1540#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Pages/MessageToSendProtocol.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/PreferenceSwitchTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-884">
-              <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.seleniumhq.selenium/selenium-support/3.5.2/355bf58e8e34deef2134c22397d7995f48890532/selenium-support-3.5.2-sources.jar!/org/openqa/selenium/support/pagefactory/DefaultElementLocator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="89" selection-start-line="89" selection-end-line="89" />
             </state>
           </provider>
         </entry>
@@ -612,9 +561,11 @@
         <option value="$PROJECT_DIR$/src/main/java/Tools/TestRunner.java" />
         <option value="$PROJECT_DIR$/src/main/java/Pages/ListDialogPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/MainTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/AlertDialogUnitTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/Pages/SMSMessagingPage.java" />
         <option value="$PROJECT_DIR$/src/main/java/Pages/MessageToSendProtocol.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Pages/RepeatAlarmPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Pages/SingleChoiceListPage.java" />
+        <option value="$PROJECT_DIR$/src/test/java/AlertDialogUnitTests.java" />
       </list>
     </option>
   </component>
@@ -1559,7 +1510,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AlertDialogUnitTests and 2 more">
+  <component name="RunManager" selected="JUnit.AlertDialogUnitTests.SingleChoiceListTest">
     <configuration name="AlertDialogUnitTests and 2 more" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo_test" />
       <option name="TEST_OBJECT" value="pattern" />
@@ -1580,11 +1531,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AlertDialogUnitTests.ListDialogButtonsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AlertDialogUnitTests.SingleChoiceListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo_test" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AlertDialogUnitTests" />
-      <option name="METHOD_NAME" value="ListDialogButtonsTest" />
+      <option name="METHOD_NAME" value="SingleChoiceListTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -1613,18 +1564,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.AlertDialogUnitTests" />
-      <item itemvalue="JUnit.AlertDialogUnitTests.ListDialogButtonsTest" />
       <item itemvalue="JUnit.AlertDialogUnitTests.SingleChoiceTest2" />
       <item itemvalue="JUnit.OsUnitTests and 1 more" />
       <item itemvalue="JUnit.AlertDialogUnitTests and 2 more" />
+      <item itemvalue="JUnit.AlertDialogUnitTests.SingleChoiceListTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AlertDialogUnitTests.SingleChoiceListTest" />
+        <item itemvalue="JUnit.AlertDialogUnitTests" />
         <item itemvalue="JUnit.AlertDialogUnitTests and 2 more" />
         <item itemvalue="JUnit.OsUnitTests and 1 more" />
-        <item itemvalue="JUnit.AlertDialogUnitTests" />
         <item itemvalue="JUnit.AlertDialogUnitTests.SingleChoiceTest2" />
-        <item itemvalue="JUnit.AlertDialogUnitTests.ListDialogButtonsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -1646,43 +1597,51 @@
       <option name="project" value="LOCAL" />
       <updated>1535989612538</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ISearch, ASearch....removed">
+      <created>1536076038042</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536076038042</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainTest_ListDialogButtonsTest - 2018.09.03 at 18h 29m 10s.xml">
-      <configuration name="MainTest.ListDialogButtonsTest" configurationId="JUnit" />
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 10h 44m 00s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_ListDialogButtonsTest - 2018.09.03 at 18h 29m 40s.xml">
-      <configuration name="MainTest.ListDialogButtonsTest" configurationId="JUnit" />
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 10h 44m 28s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_ListDialogButtonsTest - 2018.09.03 at 18h 30m 10s.xml">
-      <configuration name="MainTest.ListDialogButtonsTest" configurationId="JUnit" />
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 12h 57m 35s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_ListDialogButtonsTest - 2018.09.03 at 18h 33m 12s.xml">
-      <configuration name="MainTest.ListDialogButtonsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_ListDialogButtonsTest - 2018.09.03 at 18h 33m 54s.xml">
-      <configuration name="MainTest.ListDialogButtonsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MainTest_ListDialogButtonsTest - 2018.09.03 at 18h 43m 15s.xml">
-      <configuration name="MainTest.ListDialogButtonsTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlertDialogUnitTests_SingleChoiceTest2 - 2018.09.04 at 18h 31m 53s.xml">
-      <configuration name="AlertDialogUnitTests.SingleChoiceTest2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="AlertDialogUnitTests - 2018.09.04 at 18h 34m 41s.xml">
+    <history-entry file="AlertDialogUnitTests - 2018.09.05 at 13h 24m 28s.xml">
       <configuration name="AlertDialogUnitTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="OsUnitTests_and_1_more - 2018.09.04 at 18h 39m 16s.xml">
-      <configuration name="OsUnitTests and 1 more" configurationId="JUnit" />
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 13h 25m 06s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="AlertDialogUnitTests_and_2_more - 2018.09.04 at 18h 46m 44s.xml">
-      <configuration name="AlertDialogUnitTests and 2 more" configurationId="JUnit" />
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 13h 25m 54s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 13h 33m 22s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 13h 36m 03s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 13h 42m 11s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="AlertDialogUnitTests_SingleChoiceListTest - 2018.09.05 at 13h 44m 55s.xml">
+      <configuration name="AlertDialogUnitTests.SingleChoiceListTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19349681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1757,7 +1716,8 @@
     <MESSAGE value="Some of XPath has been changed. App page new XPath not working" />
     <MESSAGE value="Updating with gitignore" />
     <MESSAGE value="All 4 Main tests working and added constructor to CommandOnePage." />
-    <option name="LAST_COMMIT_MESSAGE" value="All 4 Main tests working and added constructor to CommandOnePage." />
+    <MESSAGE value="ISearch, ASearch....removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="ISearch, ASearch....removed" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/Pages/ProSpinnerDialogPage.java">
@@ -1775,13 +1735,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/ReferenceTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/Pages/AlertDialogsPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Pages/PreferencePage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -2049,26 +2002,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/PreferenceSwitchTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/AlertDialogUnitTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="150" column="18" lean-forward="true" selection-start-line="150" selection-start-column="18" selection-end-line="150" selection-end-column="18" />
-          <folding>
-            <element signature="e#4086#4103#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.appium/java-client/5.0.0/a3838c6c99a68e8537ae0891efb5e0618761ba74/java-client-5.0.0-sources.jar!/io/appium/java_client/AppiumDriver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -2111,13 +2044,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Pages/AlertDialogsPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="68" column="5" selection-start-line="68" selection-start-column="5" selection-end-line="68" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/PreferenceSwitchTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Pages/RepeatAlarmPage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1484">
-          <caret line="134" lean-forward="true" selection-start-line="134" selection-end-line="134" />
+        <state relative-caret-position="182">
+          <caret line="52" column="90" selection-start-line="52" selection-start-column="90" selection-end-line="52" selection-end-column="90" />
           <folding>
-            <element signature="e#3090#3091#0" expanded="true" />
-            <element signature="e#3141#3142#0" expanded="true" />
             <element signature="e#3549#3557#0" expanded="true" />
             <element signature="e#4506#4507#0" expanded="true" />
             <element signature="e#4582#4583#0" expanded="true" />
@@ -2133,6 +2084,28 @@
             <element signature="e#5208#5209#0" expanded="true" />
             <element signature="e#5254#5255#0" expanded="true" />
             <element signature="e#5330#5331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Pages/SingleChoiceListPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="58" column="36" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+          <folding>
+            <element signature="e#1634#1642#0" expanded="true" />
+            <element signature="e#2283#2284#0" expanded="true" />
+            <element signature="e#2332#2333#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/AlertDialogUnitTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="160" column="36" lean-forward="true" selection-start-line="160" selection-start-column="16" selection-end-line="160" selection-end-column="36" />
+          <folding>
+            <element signature="e#4086#4103#0" expanded="true" />
           </folding>
         </state>
       </provider>

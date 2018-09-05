@@ -99,11 +99,6 @@ public class RepeatAlarmPage extends TestRunner {
     }
 
     //Get name and index of the buttons & create Map
-
-    public String getName(WebElement element) {
-        return element.getAttribute("text");
-    }
-
     public List<String> getText(){
         List<String> daysOfTheWeek = new ArrayList<String>();
         for (WebElement element : getDaysOfTheWeek){

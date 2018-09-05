@@ -6,6 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public class SingleChoiceListPage extends TestRunner {
 
     // Initialize SingleChoiceListPage
@@ -34,9 +39,30 @@ public class SingleChoiceListPage extends TestRunner {
     private WebElement getTraffic;
 
     @FindBy(xpath = "//*[@class='android.widget.CheckedTextView' and @text='Street view']")
-    public WebElement getStreetView;
+    private WebElement getStreetView;
+
+    @FindBy(className = "android.widget.CheckedTextView")
+    public List<WebElement> getAllChoiceButtons;
 
 
+
+
+    //Get name and index of the buttons & create Map
+    public List<String> getIsChecked(){
+        List<String> allChoiceButtons = new ArrayList<String>();
+        for (WebElement element : getAllChoiceButtons){
+            allChoiceButtons.add(element.getAttribute("checked"));
+        }
+        return  allChoiceButtons;
+    }
+
+    public Map<Integer, String> setActualMap() {
+        Map<Integer, String> actual = new HashMap<>();
+        for (int i = 0; i < getIsChecked().size(); i++) {
+            actual.put(i, getIsChecked().get(i));
+        }
+        return actual;
+    }
     // Actions
 
     public AlertDialogsPage clickOk() {
@@ -72,4 +98,6 @@ public class SingleChoiceListPage extends TestRunner {
         getStreetView.click();
         return new SingleChoiceListPage(driver);
     }
+
+
 }
