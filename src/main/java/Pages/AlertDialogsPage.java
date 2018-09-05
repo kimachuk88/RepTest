@@ -125,4 +125,9 @@ public class AlertDialogsPage extends TestRunner {
         getDialogWDefTheme.click();
         return new DialogWDefThemePage(driver);
     }
+    /*public void scrollDown() {
+
+        action.longPress(PointOption.point(500,500)).moveTo(PointOption.point(500,800)).release().perform();
+
+    }*/
 }

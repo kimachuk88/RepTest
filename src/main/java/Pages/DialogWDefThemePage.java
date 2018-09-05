@@ -36,7 +36,7 @@ public class DialogWDefThemePage extends TestRunner {
         return new AlertDialogsPage(driver);
     }
 
-    private String getHeaderText() {
+    public String getHeaderText() {
         return selectHeaderText.getText();
     }
 }

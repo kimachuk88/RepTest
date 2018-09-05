@@ -51,7 +51,7 @@ public class DialogWLongMessagePage extends TestRunner {
         return selectMessageText.getText();
     }
 
-    private String getHeaderText() {
+    public String getHeaderText() {
         return selectHeaderText.getText();
     }
 }

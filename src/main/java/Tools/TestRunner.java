@@ -1,12 +1,12 @@
 package Tools;
 
 import Pages.*;
+import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.lang.ref.Reference;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -39,7 +39,7 @@ public class TestRunner {
     protected SingleChoiceListPage singleChoiceListPage;
     protected RepeatAlarmPage repeatAlarmPage;
     protected TxtEntryDialogPage txtEntryDialogPage;
-
+    protected TouchAction action;
 
 
 
@@ -86,7 +86,7 @@ public class TestRunner {
         singleChoiceListPage = new SingleChoiceListPage(driver);
         repeatAlarmPage = new RepeatAlarmPage(driver);
         txtEntryDialogPage = new TxtEntryDialogPage(driver);
-
+        action = new TouchAction(driver);
     }
 
     @After
