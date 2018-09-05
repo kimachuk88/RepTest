@@ -154,8 +154,6 @@ public class AlertDialogUnitTests extends TestRunner {
 
       //Reading actual result
       Assert.assertEquals(expected, repeatAlarmPage.setActualMap());
-<<<<<<< Updated upstream
-=======
    }
 
    @Test
@@ -171,8 +169,6 @@ public class AlertDialogUnitTests extends TestRunner {
 
         int headerLength = txtEntryDialogPage.selectHeaderText.size();
         Assert.assertEquals(0, headerLength);
->>>>>>> Stashed changes
-
 
         alertDialogsPage.clickTxtEntryDialog();
         Assert.assertTrue(txtEntryDialogPage.isNameFieldEmpty());
@@ -180,7 +176,6 @@ public class AlertDialogUnitTests extends TestRunner {
    }
 
    @Test
-<<<<<<< Updated upstream
     public void SingleChoiceListTest() throws Exception {
 
        //Navigate
@@ -200,7 +195,7 @@ public class AlertDialogUnitTests extends TestRunner {
            }
        }
    }
-=======
+
     public void TextEntryDialogClickOkButtonTest(){
        mainMenuPage.clickApp();
        appPage.clickAlertDialogs();
@@ -221,6 +216,4 @@ public class AlertDialogUnitTests extends TestRunner {
         int headerLength = txtEntryDialogPage.selectHeaderText.size();
         Assert.assertEquals(0, headerLength);
     }
-
->>>>>>> Stashed changes
 }
