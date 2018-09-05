@@ -154,10 +154,33 @@ public class AlertDialogUnitTests extends TestRunner {
 
       //Reading actual result
       Assert.assertEquals(expected, repeatAlarmPage.setActualMap());
-
+<<<<<<< Updated upstream
+=======
    }
 
    @Test
+    public void TextEntryDialogValidFieldsValuesTest(){
+        mainMenuPage.clickApp();
+        appPage.clickAlertDialogs();
+        alertDialogsPage.clickTxtEntryDialog();
+
+        txtEntryDialogPage.fillInNameField("Name value");
+        txtEntryDialogPage.fillInPasswordField("password value");
+
+        txtEntryDialogPage.clickOk();
+
+        int headerLength = txtEntryDialogPage.selectHeaderText.size();
+        Assert.assertEquals(0, headerLength);
+>>>>>>> Stashed changes
+
+
+        alertDialogsPage.clickTxtEntryDialog();
+        Assert.assertTrue(txtEntryDialogPage.isNameFieldEmpty());
+        Assert.assertTrue(txtEntryDialogPage.isPassWordFieldEmpty());
+   }
+
+   @Test
+<<<<<<< Updated upstream
     public void SingleChoiceListTest() throws Exception {
 
        //Navigate
@@ -177,4 +200,27 @@ public class AlertDialogUnitTests extends TestRunner {
            }
        }
    }
+=======
+    public void TextEntryDialogClickOkButtonTest(){
+       mainMenuPage.clickApp();
+       appPage.clickAlertDialogs();
+       alertDialogsPage.clickTxtEntryDialog();
+       txtEntryDialogPage.clickOk();
+
+       int headerLength = txtEntryDialogPage.selectHeaderText.size();
+       Assert.assertEquals(0, headerLength);
+   }
+
+    @Test
+    public void TextEntryDialogClickCancelButtonTest(){
+        mainMenuPage.clickApp();
+        appPage.clickAlertDialogs();
+        alertDialogsPage.clickTxtEntryDialog();
+        txtEntryDialogPage.clickCancel();
+
+        int headerLength = txtEntryDialogPage.selectHeaderText.size();
+        Assert.assertEquals(0, headerLength);
+    }
+
+>>>>>>> Stashed changes
 }

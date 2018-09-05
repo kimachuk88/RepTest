@@ -19,9 +19,6 @@ public class SwitchPage {
     @FindBy(id = "android:id/checkbox")
     public WebElement getCheckboxPreference;
 
-    @FindBy(className = "android.widget.Switch")
-    public List<WebElement> getRadioButtons;
-
     @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.Switch")
     public WebElement getRadioButton1;
 

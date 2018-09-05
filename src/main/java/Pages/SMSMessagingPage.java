@@ -34,9 +34,11 @@ public class SMSMessagingPage {
     //Actions
 
     public String getWarningMessageText(){
+
         return getWarning.get(1).getText();
     }
     public void clickEnableBrodcast() {
+
         getEnableSMSBroadcast.click();
     }
 
