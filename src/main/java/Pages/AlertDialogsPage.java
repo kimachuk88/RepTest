@@ -101,7 +101,7 @@ public class AlertDialogsPage extends TestRunner {
         return new RepeatAlarmPage(driver);
     }
 
-    public TxtEntryDialogPage clickTxtEntryDialog() throws Exception {
+    public TxtEntryDialogPage clickTxtEntryDialog() {
         getTxtEntryDialog.click();
         return new TxtEntryDialogPage(driver);
     }

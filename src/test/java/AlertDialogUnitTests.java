@@ -1,9 +1,17 @@
+import Pages.*;
 import Tools.TestRunner;
+import org.apache.commons.collections.functors.ExceptionFactory;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.FindBy;
 
+import java.util.Dictionary;
 import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class AlertDialogUnitTests extends TestRunner {
 
@@ -146,11 +154,29 @@ public class AlertDialogUnitTests extends TestRunner {
 
       //Reading actual result
       Assert.assertEquals(expected, repeatAlarmPage.setActualMap());
-
    }
 
    @Test
-   public void SingleChoiceListTest() throws Exception {
+    public void TextEntryDialogValidFieldsValuesTest(){
+        mainMenuPage.clickApp();
+        appPage.clickAlertDialogs();
+        alertDialogsPage.clickTxtEntryDialog();
+
+        txtEntryDialogPage.fillInNameField("Name value");
+        txtEntryDialogPage.fillInPasswordField("password value");
+
+        txtEntryDialogPage.clickOk();
+
+        int headerLength = txtEntryDialogPage.selectHeaderText.size();
+        Assert.assertEquals(0, headerLength);
+
+        alertDialogsPage.clickTxtEntryDialog();
+        Assert.assertTrue(txtEntryDialogPage.isNameFieldEmpty());
+        Assert.assertTrue(txtEntryDialogPage.isPassWordFieldEmpty());
+   }
+
+   @Test
+    public void SingleChoiceListTest() throws Exception {
 
        //Navigate
        mainMenuPage.clickApp();
@@ -170,41 +196,24 @@ public class AlertDialogUnitTests extends TestRunner {
        }
    }
 
-   @Test
-   public void DialogWTheme () throws Exception {
-
-       //Expected result
-       String expected = "Lorem ipsum dolor sit aie consectetur adipiscing";
-
-       //Navigate
+    public void TextEntryDialogClickOkButtonTest(){
        mainMenuPage.clickApp();
        appPage.clickAlertDialogs();
+       alertDialogsPage.clickTxtEntryDialog();
+       txtEntryDialogPage.clickOk();
 
-       //alertDialogsPage.scrollDown();
-
-       //
-       alertDialogsPage.clickDialogWTraditTheme();
-       String actual = dialogWTraditThemePage.getMessageText();
-       Assert.assertTrue(actual.contains(expected));
-       dialogWTraditThemePage.clickOk();
-
-       //
-       alertDialogsPage.clickDialogWHoloTheme();
-       actual = dialogWHoloThemePage.getHeaderText();
-       Assert.assertTrue(actual.contains(expected));
-       dialogWHoloThemePage.clickOk();
-
-       //
-       alertDialogsPage.clickDialogWDefLightTheme();
-       actual = dialogWDefLightThemePage.getHeaderText();
-       Assert.assertTrue(actual.contains(expected));
-       dialogWDefLightThemePage.clickOk();
-/*
-       //Get and compare actual text from Dialog with Default Theme
-       alertDialogsPage.clickDialogWDefTheme();
-       actual = dialogWDefThemePage.getHeaderText();
-       Assert.assertTrue(actual.contains(expected));
-       dialogWDefThemePage.clickOk();
-*/
+       int headerLength = txtEntryDialogPage.selectHeaderText.size();
+       Assert.assertEquals(0, headerLength);
    }
+
+    @Test
+    public void TextEntryDialogClickCancelButtonTest(){
+        mainMenuPage.clickApp();
+        appPage.clickAlertDialogs();
+        alertDialogsPage.clickTxtEntryDialog();
+        txtEntryDialogPage.clickCancel();
+
+        int headerLength = txtEntryDialogPage.selectHeaderText.size();
+        Assert.assertEquals(0, headerLength);
+    }
 }

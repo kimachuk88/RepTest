@@ -9,6 +9,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 public class TestRunner {
 
@@ -42,8 +43,6 @@ public class TestRunner {
     protected TouchAction action;
 
 
-
-
     DesiredCapabilities caps = new DesiredCapabilities();
 
     public AndroidDriver driver;
@@ -66,6 +65,9 @@ public class TestRunner {
                 e.printStackTrace();
             }
         }
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
         alertDialogsPage = new AlertDialogsPage(driver);
         appPage = new AppPage(driver);
         dialogWULongMessagePage = new DialogWULongMessagePage(driver);
