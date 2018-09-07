@@ -61,42 +61,42 @@ public class AlertDialogsPage extends TestRunner {
 
     //Actions
 
-    public DialogWMessagePage clickDialogMessage() throws Exception {
+    public DialogWMessagePage clickDialogMessage() {
         getDialogWMessage.click();
         return new DialogWMessagePage(driver);
     }
 
-    public DialogWLongMessagePage clickDialogWLongMessage() throws Exception {
+    public DialogWLongMessagePage clickDialogWLongMessage() {
         getDialogWLongMessage.click();
         return new DialogWLongMessagePage(driver);
     }
 
-    public DialogWULongMessagePage clickDialogWULongMessage() throws Exception {
+    public DialogWULongMessagePage clickDialogWULongMessage() {
         getDialogWULongMessage.click();
         return new DialogWULongMessagePage(driver);
     }
 
-    public ListDialogPage clickListDialog() throws Exception {
+    public ListDialogPage clickListDialog() {
         getListDialog.click();
         return new ListDialogPage(driver);
     }
 
-    public ProgressBarDialogPage clickProgressBarDialog() throws Exception {
+    public ProgressBarDialogPage clickProgressBarDialog() {
         getProgressBarDialog.click();
         return new ProgressBarDialogPage(driver);
     }
 
-    public ProSpinnerDialogPage clickProSpinnerDialog() throws Exception {
+    public ProSpinnerDialogPage clickProSpinnerDialog() {
         getProSpinnerDialog.click();
         return new ProSpinnerDialogPage();
     }
 
-    public SingleChoiceListPage clickSingleChoiceList() throws Exception {
+    public SingleChoiceListPage clickSingleChoiceList() {
         getSingleChoiceList.click();
         return new SingleChoiceListPage(driver);
     }
 
-    public RepeatAlarmPage clickRepeatAlarm() throws Exception {
+    public RepeatAlarmPage clickRepeatAlarm() {
         getRepeatAlarm.click();
         return new RepeatAlarmPage(driver);
     }
@@ -106,28 +106,24 @@ public class AlertDialogsPage extends TestRunner {
         return new TxtEntryDialogPage(driver);
     }
 
-    public DialogWTraditThemePage clickDialogWTraditTheme() throws Exception {
+    public DialogWTraditThemePage clickDialogWTraditTheme() {
         getDialogWTraditTheme.click();
         return new DialogWTraditThemePage(driver);
     }
 
-    public DialogWHoloThemePage clickDialogWHoloTheme() throws Exception {
+    public DialogWHoloThemePage clickDialogWHoloTheme() {
         getDialogWHoloTheme.click();
         return new DialogWHoloThemePage(driver);
     }
 
-    public DialogWDefLightThemePage clickDialogWDefLightTheme() throws Exception {
+    public DialogWDefLightThemePage clickDialogWDefLightTheme() {
         getDialogWDefLightTheme.click();
         return new DialogWDefLightThemePage(driver);
     }
 
-    public DialogWDefThemePage clickDialogWDefTheme() throws Exception {
+    public DialogWDefThemePage clickDialogWDefTheme() {
         getDialogWDefTheme.click();
         return new DialogWDefThemePage(driver);
     }
-    /*public void scrollDown() {
 
-        action.longPress(PointOption.point(500,500)).moveTo(PointOption.point(500,800)).release().perform();
-
-    }*/
 }

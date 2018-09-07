@@ -24,6 +24,8 @@ public class DialogWDefLightThemePage extends TestRunner {
     @FindBy(id = "android:id/alertTitle")
     private WebElement selectHeaderText;
 
+    @FindBy(id = "android:id/alertTitle")
+    private WebElement selectMessageText;
     //Actions
 
     public AlertDialogsPage clickOk() {
@@ -34,6 +36,10 @@ public class DialogWDefLightThemePage extends TestRunner {
     public AlertDialogsPage clickCancel() {
         getCancel.click();
         return new AlertDialogsPage(driver);
+    }
+
+    public String getMessageText() {
+        return selectMessageText.getText();
     }
 
     public String getHeaderText() {

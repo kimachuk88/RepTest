@@ -47,6 +47,10 @@ public class TestRunner {
 
     public AndroidDriver driver;
 
+    //scroll to DialogDefTheme menu
+    public void scrollToDialogWDefTheme() {
+
+    }
 
     @Before
 
@@ -89,7 +93,9 @@ public class TestRunner {
         repeatAlarmPage = new RepeatAlarmPage(driver);
         txtEntryDialogPage = new TxtEntryDialogPage(driver);
         action = new TouchAction(driver);
+        dialogWDefThemePage = new DialogWDefThemePage(driver);
     }
+
 
     @After
     public void Teardown() {
