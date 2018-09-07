@@ -27,8 +27,8 @@ public class AppPage extends TestRunner {
     @FindBy(xpath = "//*[@package='com.example.android.apis' and @class='android.widget.TextView' and @text='Alarm']")
     private WebElement getAlarm;
 
-    //@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
-    @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Alert Dialogs'][4]")
+    @FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.ListView/android.widget.TextView[4]")
+    //@FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Alert Dialogs'][4]")
     private WebElement getAlertDialogs;
 
     @FindBy(xpath = "//*[@class='android.widget.TextView' and @text='Device Admin']")
